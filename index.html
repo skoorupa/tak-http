@@ -9,7 +9,7 @@
     <input type="text" name="" value="" id="input"><button onclick="wyslij(document.getElementById('input').value+'\n')" type="button" name="button">wyslij</button>
 
     <script type="text/javascript">
-      var connection = new WebSocket("ws://tak-ws.herokuapp.com:8000", ['soap', 'xmpp']);
+      var connection = new WebSocket("ws://tak-ws.herokuapp.com:37191", ['soap', 'xmpp']);
       connection.onmessage = function (event) {
         document.getElementById('textarea').value = event.data;
       }
