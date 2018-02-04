@@ -1,0 +1,13 @@
+{
+  "name": "tak",
+  "version": "0.1.0",
+  "main": "main.js",
+  "devDependencies": {},
+  "engine": {
+    "node": "*",
+    "npm": "*"
+  },
+  "scripts": {
+    "start": "node main.js"
+  }
+}

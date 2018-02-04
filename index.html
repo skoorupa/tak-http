@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>stronka</title>
+  </head>
+  <body>
+    <textarea name="name" rows="8" cols="80" id="textarea" readonly></textarea><br>
+    <input type="text" name="" value="" id="input"><button onclick="wyslij(document.getElementById('input').value+'\n')" type="button" name="button">wyslij</button>
+
+    <script type="text/javascript">
+      var connection = new WebSocket('ws://'+window.location.hostname+":8000", ['soap', 'xmpp']);
+      connection.onmessage = function (event) {
+        document.getElementById('textarea').value = event.data;
+      }
+
+      function wyslij(txt) {
+        connection.send(txt);
+        document.getElementById('textarea').value += txt;
+      }
+    </script>
+  </body>
+</html>
